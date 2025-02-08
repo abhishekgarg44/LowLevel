@@ -1,8 +1,8 @@
-Reference:
+# Reference:
 
 	https://medium.com/@devenchan/implementing-rate-limiting-in-java-from-scratch-fixed-window-and-sliding-window-implementation-a6e8d6407d17
 
-Fixed Window Counter
+# Fixed Window Counter
 
 	The fixed window counter is the simplest form of rate limiting. It divides time into fixed-size windows and counts the number of requests in each window, blocking any requests that exceed the limit.
 	
@@ -18,7 +18,7 @@ Cons:
 	Inflexibility: Does not account for varying request rates or smooth out bursts over time.
 
 
-Sliding Window Log
+# Sliding Window Log
 
 	The sliding window log offers a more refined approach, allowing request limits to be distributed more evenly over time. It logs the timestamp of each request and ensures that the count is only for the current window.
 
@@ -33,7 +33,7 @@ Cons:
 	Memory Intensive: Requires storing timestamps for each request, which can consume more memory.
 	Computationally More Intensive: Requires more computation to manage and evaluate the log of requests.
 
-Leaky Bucket Rate Limiter:
+# Leaky Bucket Rate Limiter:
 
 	The leaky bucket algorithm metaphorically allows requests to drip out of a bucket at a constant rate. If the bucket (buffer) overflows, new requests are discarded.
 Pros:
@@ -46,7 +46,7 @@ Cons:
 	Less Reactive: Not as responsive to changes in incoming traffic patterns due to its smoothing nature.
 
 
-Token Bucket Rate Limiter:
+# Token Bucket Rate Limiter:
 
 	The token bucket algorithm fills the bucket with tokens at a constant rate. Each request removes a token, and if no tokens are available, the request is either delayed or rejected.
 	
